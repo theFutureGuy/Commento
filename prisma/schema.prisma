@@ -11,6 +11,8 @@ datasource db {
   relationMode = "prisma"
 }
 
+//Copied from next Auth
+
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -44,7 +46,11 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
 
+
+  username     String?    @unique
+
   image    String?
   accounts Account[]
   sessions Session[]
 }
+// till here
